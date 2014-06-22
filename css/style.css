@@ -1,9 +1,522 @@
 /* =============================================================================
     Base Styles Includes
    ========================================================================== */
+/** Cubify SCSS Mixin:
+Side faces are darkened() to show shading, adjust as needed.
+**/
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
 /* =============================================================================
     Layout Styles Includes
    ========================================================================== */
+.l-grid {
+  width: 100%;
+  height: 100%;
+}
+.l-grid .block {
+  position: absolute;
+}
+.l-grid .block-1 {
+  top: 0px;
+  left: 0px;
+}
+.l-grid .block-2 {
+  top: 0px;
+  left: 480px;
+}
+.l-grid .block-3 {
+  top: 0px;
+  left: 720px;
+}
+.l-grid .block-4 {
+  top: 0px;
+  left: 960px;
+}
+.l-grid .block-5 {
+  top: 240px;
+  left: 0px;
+}
+.l-grid .block-6 {
+  top: 240px;
+  left: 240px;
+}
+.l-grid .block-7 {
+  top: 480px;
+  left: 0px;
+}
+.l-grid .block-8 {
+  top: 480px;
+  left: 720px;
+}
+.l-grid .block-9 {
+  top: 480px;
+  left: 1200px;
+}
+.l-grid .block-10 {
+  top: 720px;
+  left: 240px;
+}
+.l-grid .block-11 {
+  top: 720px;
+  left: 480px;
+}
+.l-grid .block-12 {
+  top: 720px;
+  left: 960px;
+}
+
 /* =============================================================================
     Module Styles Includes
    ========================================================================== */
+.block {
+  background: red;
+  display: block;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+  -webkit-transition-timing-function: ease-in;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+
+.block-2x2 {
+  width: 480px;
+  height: 480px;
+  background: #e18400;
+  width: 480px;
+  height: 480px;
+  background: #e18400;
+  position: relative;
+  opacity: 0.9;
+  /* Set up perspective */
+  -webkit-perspective: 5000px;
+  -moz-perspective: 5000px;
+  -ms-perspective: 5000px;
+  -o-perspective: 5000px;
+  perspective: 5000px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  /* Optional setting, change for your needs */
+  -webkit-perspective-origin: 50% 50%;
+  -moz-perspective-origin: 50% 50%;
+  -ms-perspective-origin: 50% 50%;
+  -o-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+  /* Cube faces */
+}
+.block-2x2 .block-face {
+  position: absolute;
+}
+.block-2x2 .block-face-left {
+  width: 480px;
+  height: 480px;
+  background: #ae6600;
+  position: absolute;
+  right: 100%;
+  top: 0;
+  -webkit-transform: rotateY(-90deg);
+  -moz-transform: rotateY(-90deg);
+  -ms-transform: rotateY(-90deg);
+  -o-transform: rotateY(-90deg);
+  transform: rotateY(-90deg);
+  -webkit-transform-origin: right;
+  transform-origin: right;
+}
+.block-2x2 .block-face-right {
+  width: 480px;
+  height: 480px;
+  background: #ae6600;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  -webkit-transform: rotateY(90deg);
+  -moz-transform: rotateY(90deg);
+  -ms-transform: rotateY(90deg);
+  -o-transform: rotateY(90deg);
+  transform: rotateY(90deg);
+  -webkit-transform-origin: left;
+  transform-origin: left;
+}
+.block-2x2 .block-face-top {
+  width: 480px;
+  height: 480px;
+  background: #ae6600;
+  position: absolute;
+  bottom: 100%;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  -ms-transform: rotateX(90deg);
+  -o-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+}
+.block-2x2 .block-face-bottom {
+  width: 480px;
+  height: 480px;
+  background: #ae6600;
+  position: absolute;
+  top: 100%;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  -ms-transform: rotateX(-90deg);
+  -o-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  -webkit-transform-origin: top;
+  transform-origin: top;
+}
+.block-2x2 .block-face-back {
+  width: 480px;
+  height: 480px;
+  background: #7b4800;
+  -webkit-transform: translateZ(-480px);
+  -moz-transform: translateZ(-480px);
+  -ms-transform: translateZ(-480px);
+  -o-transform: translateZ(-480px);
+  transform: translateZ(-480px);
+}
+.block-2x2 .block-face-front {
+  width: 480px;
+  height: 480px;
+  background: #e18400;
+}
+
+.block-2x1 {
+  width: 480px;
+  height: 240px;
+  background: #34c0e3;
+  width: 480px;
+  height: 240px;
+  background: #34c0e3;
+  position: relative;
+  opacity: 0.9;
+  /* Set up perspective */
+  -webkit-perspective: 5000px;
+  -moz-perspective: 5000px;
+  -ms-perspective: 5000px;
+  -o-perspective: 5000px;
+  perspective: 5000px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  /* Optional setting, change for your needs */
+  -webkit-perspective-origin: 50% 50%;
+  -moz-perspective-origin: 50% 50%;
+  -ms-perspective-origin: 50% 50%;
+  -o-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+  /* Cube faces */
+}
+.block-2x1 .block-face {
+  position: absolute;
+}
+.block-2x1 .block-face-left {
+  width: 480px;
+  height: 240px;
+  background: #1ca6c8;
+  position: absolute;
+  right: 100%;
+  top: 0;
+  -webkit-transform: rotateY(-90deg);
+  -moz-transform: rotateY(-90deg);
+  -ms-transform: rotateY(-90deg);
+  -o-transform: rotateY(-90deg);
+  transform: rotateY(-90deg);
+  -webkit-transform-origin: right;
+  transform-origin: right;
+}
+.block-2x1 .block-face-right {
+  width: 480px;
+  height: 240px;
+  background: #1ca6c8;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  -webkit-transform: rotateY(90deg);
+  -moz-transform: rotateY(90deg);
+  -ms-transform: rotateY(90deg);
+  -o-transform: rotateY(90deg);
+  transform: rotateY(90deg);
+  -webkit-transform-origin: left;
+  transform-origin: left;
+}
+.block-2x1 .block-face-top {
+  width: 480px;
+  height: 480px;
+  background: #1ca6c8;
+  position: absolute;
+  bottom: 100%;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  -ms-transform: rotateX(90deg);
+  -o-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+}
+.block-2x1 .block-face-bottom {
+  width: 480px;
+  height: 480px;
+  background: #1ca6c8;
+  position: absolute;
+  top: 100%;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  -ms-transform: rotateX(-90deg);
+  -o-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  -webkit-transform-origin: top;
+  transform-origin: top;
+}
+.block-2x1 .block-face-back {
+  width: 480px;
+  height: 240px;
+  background: #15819c;
+  -webkit-transform: translateZ(-480px);
+  -moz-transform: translateZ(-480px);
+  -ms-transform: translateZ(-480px);
+  -o-transform: translateZ(-480px);
+  transform: translateZ(-480px);
+}
+.block-2x1 .block-face-front {
+  width: 480px;
+  height: 240px;
+  background: #34c0e3;
+}
+
+.block-1x2 {
+  width: 240px;
+  height: 480px;
+  background: #93e334;
+  width: 240px;
+  height: 480px;
+  background: #93e334;
+  position: relative;
+  opacity: 0.9;
+  /* Set up perspective */
+  -webkit-perspective: 5000px;
+  -moz-perspective: 5000px;
+  -ms-perspective: 5000px;
+  -o-perspective: 5000px;
+  perspective: 5000px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  /* Optional setting, change for your needs */
+  -webkit-perspective-origin: 50% 50%;
+  -moz-perspective-origin: 50% 50%;
+  -ms-perspective-origin: 50% 50%;
+  -o-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+  /* Cube faces */
+}
+.block-1x2 .block-face {
+  position: absolute;
+}
+.block-1x2 .block-face-left {
+  width: 480px;
+  height: 480px;
+  background: #79c81c;
+  position: absolute;
+  right: 100%;
+  top: 0;
+  -webkit-transform: rotateY(-90deg);
+  -moz-transform: rotateY(-90deg);
+  -ms-transform: rotateY(-90deg);
+  -o-transform: rotateY(-90deg);
+  transform: rotateY(-90deg);
+  -webkit-transform-origin: right;
+  transform-origin: right;
+}
+.block-1x2 .block-face-right {
+  width: 480px;
+  height: 480px;
+  background: #79c81c;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  -webkit-transform: rotateY(90deg);
+  -moz-transform: rotateY(90deg);
+  -ms-transform: rotateY(90deg);
+  -o-transform: rotateY(90deg);
+  transform: rotateY(90deg);
+  -webkit-transform-origin: left;
+  transform-origin: left;
+}
+.block-1x2 .block-face-top {
+  width: 240px;
+  height: 480px;
+  background: #79c81c;
+  position: absolute;
+  bottom: 100%;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  -ms-transform: rotateX(90deg);
+  -o-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+}
+.block-1x2 .block-face-bottom {
+  width: 240px;
+  height: 480px;
+  background: #79c81c;
+  position: absolute;
+  top: 100%;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  -ms-transform: rotateX(-90deg);
+  -o-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  -webkit-transform-origin: top;
+  transform-origin: top;
+}
+.block-1x2 .block-face-back {
+  width: 240px;
+  height: 480px;
+  background: #5e9c15;
+  -webkit-transform: translateZ(-480px);
+  -moz-transform: translateZ(-480px);
+  -ms-transform: translateZ(-480px);
+  -o-transform: translateZ(-480px);
+  transform: translateZ(-480px);
+}
+.block-1x2 .block-face-front {
+  width: 240px;
+  height: 480px;
+  background: #93e334;
+}
+
+.block-1x1 {
+  width: 240px;
+  height: 240px;
+  background: #98002f;
+  width: 240px;
+  height: 240px;
+  background: #98002f;
+  position: relative;
+  opacity: 0.9;
+  /* Set up perspective */
+  -webkit-perspective: 5000px;
+  -moz-perspective: 5000px;
+  -ms-perspective: 5000px;
+  -o-perspective: 5000px;
+  perspective: 5000px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  /* Optional setting, change for your needs */
+  -webkit-perspective-origin: 50% 50%;
+  -moz-perspective-origin: 50% 50%;
+  -ms-perspective-origin: 50% 50%;
+  -o-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+  /* Cube faces */
+}
+.block-1x1 .block-face {
+  position: absolute;
+}
+.block-1x1 .block-face-left {
+  width: 480px;
+  height: 240px;
+  background: #65001f;
+  position: absolute;
+  right: 100%;
+  top: 0;
+  -webkit-transform: rotateY(-90deg);
+  -moz-transform: rotateY(-90deg);
+  -ms-transform: rotateY(-90deg);
+  -o-transform: rotateY(-90deg);
+  transform: rotateY(-90deg);
+  -webkit-transform-origin: right;
+  transform-origin: right;
+}
+.block-1x1 .block-face-right {
+  width: 480px;
+  height: 240px;
+  background: #65001f;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  -webkit-transform: rotateY(90deg);
+  -moz-transform: rotateY(90deg);
+  -ms-transform: rotateY(90deg);
+  -o-transform: rotateY(90deg);
+  transform: rotateY(90deg);
+  -webkit-transform-origin: left;
+  transform-origin: left;
+}
+.block-1x1 .block-face-top {
+  width: 240px;
+  height: 480px;
+  background: #65001f;
+  position: absolute;
+  bottom: 100%;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  -ms-transform: rotateX(90deg);
+  -o-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+}
+.block-1x1 .block-face-bottom {
+  width: 240px;
+  height: 480px;
+  background: #65001f;
+  position: absolute;
+  top: 100%;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  -ms-transform: rotateX(-90deg);
+  -o-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  -webkit-transform-origin: top;
+  transform-origin: top;
+}
+.block-1x1 .block-face-back {
+  width: 240px;
+  height: 240px;
+  background: #32000f;
+  -webkit-transform: translateZ(-480px);
+  -moz-transform: translateZ(-480px);
+  -ms-transform: translateZ(-480px);
+  -o-transform: translateZ(-480px);
+  transform: translateZ(-480px);
+}
+.block-1x1 .block-face-front {
+  width: 240px;
+  height: 240px;
+  background: #98002f;
+}
+
+/*
+ * States
+ */
+.block-active {
+  -webkit-transform: rotateX(-190deg);
+  -moz-transform: rotateX(-190deg);
+  -ms-transform: rotateX(-190deg);
+  -o-transform: rotateX(-190deg);
+  transform: rotateX(-190deg);
+  -webkit-transform-origin: right;
+  transform-origin: right;
+}

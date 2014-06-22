@@ -6,14 +6,25 @@ module.exports = {
             sourceMap: true,
         },
         src: [
-            'components/jquery/dist/jquery.js',
-            'components/underscore/underscore.js',
-            'components/backbone/backbone.js',
-            'components/planck/planck.js'
+            'components/jquery/jquery.js',
+            'components/underscore/underscore.js'
         ],
-        dest: 'js/dist/lib.js'
+        dest: 'js/lib.js'
     },
 
+    // Extensions (Backbone Marionette, jQuery Mobile)
+    planck: {
+        options: {
+            sourceMap: true,
+        },
+        src: [
+            'planck/dev/Planck.js',
+            'planck/dev/Planck.Events.js',
+            'planck/dev/Planck.Stage.js',
+            'planck/dev/Planck.Obj.js'
+        ],
+        dest: 'planck/planck.js'
+    },
 
     // Extensions (Backbone Marionette, jQuery Mobile)
     ext: {
@@ -21,9 +32,10 @@ module.exports = {
             sourceMap: true,
         },
         src: [
+            'components/jquery.cookie/jquery.cookie.js',
             'components/jquery.transit/jquery.transit.js'
         ],
-        dest: 'js/dist/ext.js'
+        dest: 'js/ext.js'
     },
 
 
@@ -33,11 +45,9 @@ module.exports = {
             sourceMap: true,
         },
         src: [
-            'components/console-polyfill/index.js',
-            'components/picturefill/src/picturefill.js',
-            'components/json3/lib/json3.js',
+            'components/es5-shim/es5-sham.js',
         ],
-        dest: 'js/dist/polyfills.js'
+        dest: 'js/polyfills.js'
     },
 
 
@@ -47,10 +57,8 @@ module.exports = {
             sourceMap: true,
         },
         src: [
-            'js/src/app.js',
-            'js/src/*.js',
-            'js/src/**/*.js'
+            'js/app/*.js'
         ],
-        dest: 'js/dist/app.js'
+        dest: 'js/app.js'
     }
 };

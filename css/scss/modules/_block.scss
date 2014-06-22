@@ -1,0 +1,61 @@
+@import "compass/css3/transform";
+@import "compass/css3/transition";
+
+.block {
+    background: red;
+    display: block;
+
+    @include transition-property(transform);
+    @include transition-duration(1s);
+    @include transition-timing-function(ease-in);
+
+    // .block-face {
+    //     @include backface-visibility(hidden);
+    // }
+
+    // .block-face-front {
+    //     @include translate( $blocksize );
+    // }
+
+}
+
+.block-2x2 {
+    width: $blocksize * 2;
+    height: $blocksize * 2;
+    background: #e18400;
+    @include cubify($blocksize * 2, $blocksize * 2, $blocksize * 2, #e18400);
+}
+
+.block-2x1 {
+    width: $blocksize * 2;
+    height: $blocksize;
+    background: #34c0e3;
+    @include cubify($blocksize * 2, $blocksize, $blocksize * 2, #34c0e3);
+}
+
+.block-1x2 {
+    width: $blocksize;
+    height: $blocksize * 2;
+    background: #93e334;
+    @include cubify($blocksize, $blocksize * 2, $blocksize * 2, #93e334);
+}
+
+.block-1x1 {
+    width: $blocksize;
+    height: $blocksize;
+    background: #98002f;
+    @include cubify($blocksize, $blocksize, $blocksize * 2, #98002f);
+}
+
+
+
+/*
+ * States
+ */
+
+.block-active {
+
+    @include rotateX(-190deg);
+    -webkit-transform-origin: right;
+    transform-origin: right;
+}

@@ -43,7 +43,11 @@
 
         "picturefill": "^2.0.0",
 
-        "json3": "^3.3.1"
+        "json3": "^3.3.1",
+
+        "planck": "git@git.kdigital.net:barney/plank-lib.git#5d8aa8cac81fce7ed5c348f0264f8e660d0cceec",
+
+        "jquery.transit": "^0.9.9"
     },
 
 
